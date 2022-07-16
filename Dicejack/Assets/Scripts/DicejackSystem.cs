@@ -19,6 +19,10 @@ public class DicejackSystem : MonoBehaviour
     public GameObject d6DicePrefab;
     private IEnumerator coroutine;
     public Menu fade;
+    public AudioSource tensionMusic;
+    public AudioSource chillMusic;
+    public AudioClip tensionMusic_;
+
 
 
     bool finishEnemy;
@@ -119,6 +123,15 @@ public class DicejackSystem : MonoBehaviour
                 StartCoroutine(coroutine);
 
             }
+        }
+        if(playerMan.lives == 1)
+        {
+            chillMusic.Stop();
+            tensionMusic.PlayOneShot(tensionMusic_);
+            
+
+
+            
         }
     }
     private IEnumerator WaitAndPrint(float waitTime)
