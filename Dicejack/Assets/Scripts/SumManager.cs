@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SumManager : MonoBehaviour
 {
-    public DiceBehaviour[] diceBehaviour;
-    public int diceIndex = 0;
-    public int diceCounter = -1;
+    List<DiceBehaviour> diceBehaviour = new List<DiceBehaviour>();
+
     public int total;
 
     
@@ -17,27 +16,36 @@ public class SumManager : MonoBehaviour
         
 
     }
-   
 
-    public void Sum()
+    public int Sum(DiceBehaviour[] behaviours)
     {
-        if (diceCounter == diceBehaviour.Length-1)
-        {
-            
-            diceCounter = -1;
+        DiceBehaviour[] behaviourArr = diceBehaviour.ToArray();
 
-        }
-        if (diceCounter < diceBehaviour.Length)
+        total = 0;
+
+        for (int i = 0; i < behaviourArr.Length; ++i)
         {
-            diceCounter++;
-            total += diceBehaviour[diceCounter].d6Dice;
-            
+            total += behaviourArr[i].d6Dice;
         }
+
+        //if (diceCounter == diceBehaviour.Length-1)
+        //{
+            
+        //    diceCounter = -1;
+
+        //}
+        //if (diceCounter < diceBehaviour.Length)
+        //{
+        //    diceCounter++;
+        //    total += diceBehaviour[diceCounter].d6Dice;
+            
+        //}
+
+        return total;
     }
 
-    public void Reset()
+    public void Reset(int charTotal)
     {
-        total = 0;
-        diceCounter = -1;
+        charTotal = 0;
     }
 }

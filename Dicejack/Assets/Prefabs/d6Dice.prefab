@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4290114964615529648}
   m_Layer: 0
   m_Name: d6Dice
-  m_TagString: Untagged
+  m_TagString: d6Dice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1148372859
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a315890146c92c94589a0a9984a714a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b007035666e3ec8489cb5f7b7e4a7cdb, type: 3}
   - {fileID: 21300000, guid: 8807a1149e0e8354c979b0add163bff1, type: 3}
   - {fileID: 21300000, guid: 50c5a807a8ff03c488e053f7e39fe62a, type: 3}
   - {fileID: 21300000, guid: c43cb71d5b35b3a42b6be40b59140bd5, type: 3}
