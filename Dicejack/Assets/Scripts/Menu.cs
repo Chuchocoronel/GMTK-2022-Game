@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
     void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
-        animator.SetTrigger("Scena Charlie");
+        animator.SetTrigger("FadeOut");
     }
 
     void OnFadeComplete()
