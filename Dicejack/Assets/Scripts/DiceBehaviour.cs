@@ -22,7 +22,7 @@ public class DiceBehaviour : MonoBehaviour
         
     }
 
-    void RollTheDice()
+    public void RollTheDice()
     {
         dice = Random.Range(1,101);
         Dice_d6();
