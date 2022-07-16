@@ -18,6 +18,7 @@ public class DicejackSystem : MonoBehaviour
     public float targetTime = 2f;
     public GameObject d6DicePrefab;
     private IEnumerator coroutine;
+    public Menu fade;
 
 
     bool finishEnemy;
@@ -105,11 +106,11 @@ public class DicejackSystem : MonoBehaviour
 
             if (playerMan.lives == 0 )
             {
-                SceneManager.LoadScene("Lose");
+                fade.FadeToLevel(2);
             }
             if(enemyMan.lives == 0)
             {
-                SceneManager.LoadScene("Win");
+                fade.FadeToLevel(3);
             }
             else
             {
@@ -128,6 +129,5 @@ public class DicejackSystem : MonoBehaviour
         winAnimation.SetBool("hasWon", false);
         drawAnimation.SetBool("hasDraw", false);
         playerMan.AddDice(Instantiate(d6DicePrefab, player.transform.position, player.transform.rotation));
-
     }
 }

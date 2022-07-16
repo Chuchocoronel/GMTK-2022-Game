@@ -26,7 +26,7 @@ public class Menu : MonoBehaviour
         FadeToLevel(1);
     }
 
-    void FadeToLevel(int levelIndex)
+    public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
@@ -39,6 +39,20 @@ public class Menu : MonoBehaviour
             case 1:
                 SceneManager.LoadScene("Game");
                 break;
+            case 2:
+                SceneManager.LoadScene("Lose");
+                break;
+            case 3:
+                SceneManager.LoadScene("Win");
+                break;
+            case 4:
+                SceneManager.LoadScene("MainMenu");
+                break;
         }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
