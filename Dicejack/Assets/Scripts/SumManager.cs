@@ -3,33 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SumManager : MonoBehaviour
-{
-    List<DiceBehaviour> diceBehaviour = new List<DiceBehaviour>();
-    public RollTheDice scriptRoll;
-    public PlayerManager playerManager;
-    public int total;
-
-    
+{    
     private void Update()
     {
-
-        if (!scriptRoll.diceToRoll && playerManager.dices.Count > 0)
-        {
-            Sum(diceBehaviour.ToArray());
-        }
-        
 
     }
 
     public int Sum(DiceBehaviour[] behaviours)
     {
-        DiceBehaviour[] behaviourArr = diceBehaviour.ToArray();
+        int total = 0;
 
-        total = 0;
-
-        for (int i = 0; i < behaviourArr.Length; ++i)
+        for (int i = 0; i < behaviours.Length; ++i)
         {
-            total += behaviourArr[i].d6Dice;
+            total += behaviours[i].d6Dice;
         }
 
         //if (diceCounter == diceBehaviour.Length-1)

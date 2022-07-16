@@ -37,7 +37,7 @@ public class Menu : MonoBehaviour
         switch(levelToLoad)
         {
             case 1:
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Game");
                 break;
         }
     }

@@ -34,11 +34,10 @@ public class RollTheDice : MonoBehaviour
     public void HitDice()
     {
         player.GetComponent<PlayerManager>().AddDice(Instantiate(d6DicePrefab, player.transform.position, player.transform.rotation));
-        
     }
 
     public void StandDice()
     {
-        //TO DO
+        player.GetComponent<PlayerManager>().stand = true;
     }
 }

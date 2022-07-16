@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerManager : MonoBehaviour
+public class EnemyManager : MonoBehaviour
 {
-    public GameObject rollButton;
-    public GameObject hitButton;
-    public GameObject standButton;
-
     public RollTheDice scriptRoll;
+    public GameObject player;
+    PlayerManager playerMan;
+    public GameObject d6DicePrefab;
 
     public List<GameObject> dices = new List<GameObject>();
 
@@ -21,51 +19,63 @@ public class PlayerManager : MonoBehaviour
 
     public bool stand;
 
+    float timer;
+
     // Start is called before the first frame update
     void Start()
     {
         square = GetComponent<SpriteRenderer>().bounds;
         total = 0;
+        timer = 0;
+        playerMan = player.GetComponent<PlayerManager>();
+        stand = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!scriptRoll.diceToRoll && dices.Count > 0 && !stand)
-        {
-            rollButton.SetActive(false);
-            hitButton.SetActive(true);
-            standButton.SetActive(true);
+        
+    }
 
-            Sum();
-        }
-
-        if (stand)
+    public void UpdateStep()
+    {
+        if (!stand)
         {
-            rollButton.SetActive(false);
-            hitButton.SetActive(false);
-            standButton.SetActive(false);
+            timer += Time.deltaTime;
+
+            if (timer >= 1)
+            {
+                if (total < 21 && playerMan.total >= total)
+                {
+                    AddDice(Instantiate(d6DicePrefab, transform.position, transform.rotation));
+                    scriptRoll.RolltheDice();
+                    Sum();
+                }
+                else if (total < 21 && playerMan.total < total)
+                {
+                    stand = true;
+                }
+
+                timer = 0;
+            }
         }
     }
 
     public void AddDice(GameObject newDice)
     {
-        rollButton.SetActive(true);
-        hitButton.SetActive(false);
-        standButton.SetActive(false);
         newDice.transform.SetParent(transform);
         dices.Add(newDice);
         scriptRoll.dice = newDice.GetComponent<DiceBehaviour>();
         scriptRoll.diceToRoll = true;
-        float dist = square.size.x / (dices.Count+1);
+        float dist = square.size.x / (dices.Count + 1);
         GameObject[] dicesArr = dices.ToArray();
         float totalDist = 0f;
         float origin = square.center.x - (square.size.x / 2);
-        for(int i = 0; i < dicesArr.Length; ++i)
+        for (int i = 0; i < dicesArr.Length; ++i)
         {
             totalDist += dist;
             Vector3 pos = new Vector3(origin + totalDist, dicesArr[i].transform.position.y, 0);
-            dicesArr[i].transform.SetPositionAndRotation( pos, dicesArr[i].transform.rotation);
+            dicesArr[i].transform.SetPositionAndRotation(pos, dicesArr[i].transform.rotation);
         }
     }
 
