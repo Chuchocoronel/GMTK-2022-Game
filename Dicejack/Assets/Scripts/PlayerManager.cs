@@ -9,9 +9,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject hitButton;
     public GameObject standButton;
 
-    RollTheDice scriptRoll;
+    public RollTheDice scriptRoll;
 
-    List<GameObject> dices = new List<GameObject>();
+   public List<GameObject> dices = new List<GameObject>();
 
     Bounds square;
 
@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         square = GetComponent<SpriteRenderer>().bounds;
-        scriptRoll = rollButton.GetComponent<RollTheDice>();
+        
     }
 
     // Update is called once per frame
@@ -36,10 +36,22 @@ public class PlayerManager : MonoBehaviour
     public void AddDice(GameObject newDice)
     {
         rollButton.SetActive(true);
-
         newDice.transform.SetParent(transform);
         dices.Add(newDice);
         scriptRoll.dice = newDice.GetComponent<DiceBehaviour>();
         scriptRoll.diceToRoll = true;
+        float dist = square.size.x / (dices.Count+1);
+        GameObject[] dicesArr = dices.ToArray();
+        float totalDist = 0f;
+        float origin = square.center.x - (square.size.x / 2);
+        for(int i = 0; i < dicesArr.Length; ++i)
+        {
+            totalDist += dist;
+            Vector3 pos = new Vector3(origin + totalDist, dicesArr[i].transform.position.y, 0);
+            dicesArr[i].transform.SetPositionAndRotation( pos, dicesArr[i].transform.rotation);
+        }
+        rollButton.SetActive(true);
+        hitButton.SetActive(false);
+        standButton.SetActive(false);
     }
 }

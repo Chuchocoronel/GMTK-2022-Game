@@ -5,14 +5,18 @@ using UnityEngine;
 public class SumManager : MonoBehaviour
 {
     List<DiceBehaviour> diceBehaviour = new List<DiceBehaviour>();
-
+    public RollTheDice scriptRoll;
+    public PlayerManager playerManager;
     public int total;
 
     
     private void Update()
     {
 
-
+        if (!scriptRoll.diceToRoll && playerManager.dices.Count > 0)
+        {
+            Sum(diceBehaviour.ToArray());
+        }
         
 
     }

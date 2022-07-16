@@ -272,7 +272,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 52631111}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 283408428}
+        m_TargetAssemblyTypeName: RollTheDice, Assembly-CSharp
+        m_MethodName: HitDice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &52631111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice: {fileID: 0}
+  player: {fileID: 985579864}
+  d6DicePrefab: {fileID: 4290114964615529652, guid: 6ce5a3d4c18271c4a8c582d2805d8e46, type: 3}
   diceToRoll: 0
 --- !u!1 &884887910
 GameObject:
@@ -573,7 +587,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &884887912
 MonoBehaviour:
@@ -650,7 +664,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -673,7 +687,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &985579867
 MonoBehaviour:
@@ -690,6 +704,8 @@ MonoBehaviour:
   rollButton: {fileID: 283408423}
   hitButton: {fileID: 52631108}
   standButton: {fileID: 1976292776}
+  scriptRoll: {fileID: 283408428}
+  dices: []
 --- !u!114 &985579868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b176ce822d8f748a77d774c64bc666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptRoll: {fileID: 283408428}
+  playerManager: {fileID: 985579867}
   total: 0
 --- !u!1 &1373154053
 GameObject:
@@ -972,7 +990,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976292779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 283408428}
+        m_TargetAssemblyTypeName: RollTheDice, Assembly-CSharp
+        m_MethodName: StandDice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1976292779
 MonoBehaviour:
   m_ObjectHideFlags: 0

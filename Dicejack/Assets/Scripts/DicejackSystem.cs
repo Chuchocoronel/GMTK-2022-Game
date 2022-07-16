@@ -17,9 +17,9 @@ public class DicejackSystem : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            player.GetComponent<PlayerManager>().AddDice(Instantiate(d6DicePrefab));
+            player.GetComponent<PlayerManager>().AddDice(Instantiate(d6DicePrefab, player.transform.position, player.transform.rotation));
         }
     }
 }

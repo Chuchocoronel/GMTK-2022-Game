@@ -5,12 +5,14 @@ using UnityEngine;
 public class RollTheDice : MonoBehaviour
 {
     public DiceBehaviour dice;
+    public GameObject player;
+    public GameObject d6DicePrefab;
     public bool diceToRoll;
 
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -31,11 +33,12 @@ public class RollTheDice : MonoBehaviour
 
     public void HitDice()
     {
-
+        player.GetComponent<PlayerManager>().AddDice(Instantiate(d6DicePrefab, player.transform.position, player.transform.rotation));
+        
     }
 
     public void StandDice()
     {
-
+        //TO DO
     }
 }
