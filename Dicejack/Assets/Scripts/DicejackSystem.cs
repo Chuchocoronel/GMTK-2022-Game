@@ -10,10 +10,15 @@ public class DicejackSystem : MonoBehaviour
     public GameObject enemy;
     public GameObject[] coinLivesPlayer;
     public GameObject[] coinLivesEnemy;
+    public Animator winAnimation;
+    public Animator loseAnimation;
+    public Animator drawAnimation;
     PlayerManager playerMan;
     EnemyManager enemyMan;
-
+    public float targetTime = 2f;
     public GameObject d6DicePrefab;
+    private IEnumerator coroutine;
+
 
     bool finishEnemy;
 
@@ -23,7 +28,9 @@ public class DicejackSystem : MonoBehaviour
         playerMan.AddDice(Instantiate(d6DicePrefab, player.transform.position, player.transform.rotation));
 
         enemyMan = enemy.GetComponent<EnemyManager>();
-       
+        loseAnimation.SetBool("hasLost", false);
+        winAnimation.SetBool("hasWon", false);
+        drawAnimation.SetBool("hasDraw", false);
         finishEnemy = false;
     }
 
@@ -53,6 +60,7 @@ public class DicejackSystem : MonoBehaviour
         {
             if (playerMan.total > 21)
             {
+                loseAnimation.SetBool("hasLost", true);
                 playerMan.lives--;
                 coinLivesPlayer[playerMan.lives].SetActive(false);  
                 playerMan.Reset();
@@ -61,14 +69,18 @@ public class DicejackSystem : MonoBehaviour
             }
             else if (enemyMan.total > 21)
             {
+                winAnimation.SetBool("hasWon", true);
                 enemyMan.lives--;
-                coinLivesEnemy[enemyMan.lives].SetActive(false);  
+                coinLivesEnemy[enemyMan.lives].SetActive(false);
                 playerMan.Reset();
                 enemyMan.Reset();
                 finishEnemy = false;
+                
+                
             }
             else if (playerMan.total > enemyMan.total)
             {
+                winAnimation.SetBool("hasWon", true);
                 enemyMan.lives--;    
                 coinLivesEnemy[enemyMan.lives].SetActive(false);
                 playerMan.Reset();
@@ -76,9 +88,16 @@ public class DicejackSystem : MonoBehaviour
                 finishEnemy = false;
             }
             else if (playerMan.total < enemyMan.total)
-            { 
+            {
+                loseAnimation.SetBool("hasLost", true);
                 playerMan.lives--;
                 coinLivesPlayer[playerMan.lives].SetActive(false);
+                playerMan.Reset();
+                enemyMan.Reset();
+                finishEnemy = false;
+            }else if(playerMan.total == enemyMan.total)
+            {
+                drawAnimation.SetBool("hasDraw", true);
                 playerMan.Reset();
                 enemyMan.Reset();
                 finishEnemy = false;
@@ -90,8 +109,21 @@ public class DicejackSystem : MonoBehaviour
             }
             else
             {
-                playerMan.AddDice(Instantiate(d6DicePrefab, player.transform.position, player.transform.rotation));
+
+                coroutine = WaitAndPrint(2.0f);
+                StartCoroutine(coroutine);
+
             }
         }
+    }
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        
+        yield return new WaitForSeconds(waitTime);
+        loseAnimation.SetBool("hasLost", false);
+        winAnimation.SetBool("hasWon", false);
+        drawAnimation.SetBool("hasDraw", false);
+        playerMan.AddDice(Instantiate(d6DicePrefab, player.transform.position, player.transform.rotation));
+
     }
 }
