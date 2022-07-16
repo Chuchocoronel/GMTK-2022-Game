@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiceBehaviour : MonoBehaviour
 {
     public int dice;
     public int d6Dice;
-
+    public GameObject rollTheDiceButton;
     public float[] percentatgesD6;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class DiceBehaviour : MonoBehaviour
     {
         dice = 0;
         d6Dice = 0;
+        rollTheDiceButton.SetActive(true);
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class DiceBehaviour : MonoBehaviour
     {
         dice = Random.Range(1,101);
         Dice_d6();
+        rollTheDiceButton.SetActive(false);
     }
 
     void Dice_d6()
