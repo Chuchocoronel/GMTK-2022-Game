@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject rollButton;
     public GameObject hitButton;
     public GameObject standButton;
+    
 
     public RollTheDice scriptRoll;
 

@@ -8,6 +8,8 @@ public class DicejackSystem : MonoBehaviour
 {
     public GameObject player;
     public GameObject enemy;
+    public GameObject[] coinLivesPlayer;
+    public GameObject[] coinLivesEnemy;
     PlayerManager playerMan;
     EnemyManager enemyMan;
 
@@ -52,6 +54,7 @@ public class DicejackSystem : MonoBehaviour
             if (playerMan.total > 21)
             {
                 playerMan.lives--;
+                coinLivesPlayer[playerMan.lives].SetActive(false);  
                 playerMan.Reset();
                 enemyMan.Reset(); 
                 finishEnemy = false;
@@ -59,20 +62,23 @@ public class DicejackSystem : MonoBehaviour
             else if (enemyMan.total > 21)
             {
                 enemyMan.lives--;
+                coinLivesEnemy[enemyMan.lives].SetActive(false);  
                 playerMan.Reset();
                 enemyMan.Reset();
                 finishEnemy = false;
             }
             else if (playerMan.total > enemyMan.total)
             {
-                enemyMan.lives--;
+                enemyMan.lives--;    
+                coinLivesEnemy[enemyMan.lives].SetActive(false);
                 playerMan.Reset();
                 enemyMan.Reset();
                 finishEnemy = false;
             }
             else if (playerMan.total < enemyMan.total)
-            {
+            { 
                 playerMan.lives--;
+                coinLivesPlayer[playerMan.lives].SetActive(false);
                 playerMan.Reset();
                 enemyMan.Reset();
                 finishEnemy = false;
