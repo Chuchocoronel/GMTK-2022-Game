@@ -103,9 +103,13 @@ public class DicejackSystem : MonoBehaviour
                 finishEnemy = false;
             }
 
-            if (playerMan.lives == 0 || enemyMan.lives == 0)
+            if (playerMan.lives == 0 )
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("Lose");
+            }
+            if(enemyMan.lives == 0)
+            {
+                SceneManager.LoadScene("Win");
             }
             else
             {
