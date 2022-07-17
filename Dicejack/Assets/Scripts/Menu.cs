@@ -48,6 +48,15 @@ public class Menu : MonoBehaviour
             case 4:
                 SceneManager.LoadScene("MainMenu");
                 break;
+            case 5:
+                SceneManager.LoadScene("DiffiultSellector");
+                break;
+            case 6:
+                SceneManager.LoadScene("Easy");
+                break;
+            case 7:
+                SceneManager.LoadScene("Hard");
+                break;
         }
     }
 

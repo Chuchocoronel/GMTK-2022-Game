@@ -1324,17 +1324,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26fa22de1b9d0a4c89872cb6257c168, type: 3}
---- !u!114 &1362239887 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7156538403407366014, guid: f26fa22de1b9d0a4c89872cb6257c168, type: 3}
-  m_PrefabInstance: {fileID: 1362239886}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaddb43fa44c1fb4788b2f7723090265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1580113779 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4252091073698604737, guid: 14bc4f8ab0464b042803db4c63c6232b, type: 3}
@@ -1433,10 +1422,10 @@ RectTransform:
   m_Father: {fileID: 7961867142678538951}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 829, y: 456.86}
-  m_SizeDelta: {x: 175.37, y: 151.62}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -139, y: -135.67}
+  m_SizeDelta: {x: 210.52, y: 182.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1731835957
 MonoBehaviour:
@@ -1482,14 +1471,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1362239887}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
-        m_MethodName: ToMenu
-        m_Mode: 1
+      - m_Target: {fileID: 7961867142678538953}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: FadeToLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2007,13 +1996,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3091306642641385089, guid: 260b674f5986af64cb694caf6c744635, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3091306642641385103, guid: 260b674f5986af64cb694caf6c744635, type: 3}
       propertyPath: m_Name
       value: Fade
       objectReference: {fileID: 0}
     - target: {fileID: 3091306642641385103, guid: 260b674f5986af64cb694caf6c744635, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260b674f5986af64cb694caf6c744635, type: 3}
