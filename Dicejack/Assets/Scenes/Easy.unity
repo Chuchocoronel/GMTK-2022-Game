@@ -1760,7 +1760,7 @@ PrefabInstance:
     - target: {fileID: 8738426260546157792, guid: bf13bd8dff48bf34ea2e3de820edc0d2, type: 3}
       propertyPath: fade
       value: 
-      objectReference: {fileID: 6416985362148673616, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      objectReference: {fileID: 1105316527}
     - target: {fileID: 8738426260546157792, guid: bf13bd8dff48bf34ea2e3de820edc0d2, type: 3}
       propertyPath: enemy
       value: 

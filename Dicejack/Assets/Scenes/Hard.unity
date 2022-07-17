@@ -1594,6 +1594,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8738426260546157792, guid: bf13bd8dff48bf34ea2e3de820edc0d2, type: 3}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 299326904}
+    - target: {fileID: 8738426260546157792, guid: bf13bd8dff48bf34ea2e3de820edc0d2, type: 3}
       propertyPath: enemy
       value: 
       objectReference: {fileID: 407182002}
@@ -1605,6 +1609,10 @@ PrefabInstance:
       propertyPath: chillMusic
       value: 
       objectReference: {fileID: 933632313}
+    - target: {fileID: 8738426260546157792, guid: bf13bd8dff48bf34ea2e3de820edc0d2, type: 3}
+      propertyPath: tensionMusic
+      value: 
+      objectReference: {fileID: 2134225206}
     - target: {fileID: 8738426260546157792, guid: bf13bd8dff48bf34ea2e3de820edc0d2, type: 3}
       propertyPath: winAnimation
       value: 
