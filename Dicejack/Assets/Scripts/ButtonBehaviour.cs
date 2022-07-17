@@ -6,14 +6,31 @@ using UnityEngine.UI;
 
 public class ButtonBehaviour : MonoBehaviour
 {
-    public AudioClip hover;
-    public AudioClip click;
-    public AudioSource audioSource;
+    
     public void ToMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        audioSource.PlayOneShot(click);
+        
+    }
+    public void ToHard()
+    {
+        SceneManager.LoadScene("Hard");
 
     }
-    
+    public void ToMedium()
+    {
+        SceneManager.LoadScene("Game");
+
+    }
+    public void ToEasy()
+    {
+        SceneManager.LoadScene("Easy");
+
+    }
+    public void ToDifficultySelection()
+    {
+        SceneManager.LoadScene("DiffiultSellector");
+    }
+
+
 }
