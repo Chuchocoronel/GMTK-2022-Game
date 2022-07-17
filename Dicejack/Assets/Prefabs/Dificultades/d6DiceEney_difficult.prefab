@@ -101,12 +101,12 @@ MonoBehaviour:
   dice: 0
   d6Dice: 0
   percentatgesD6:
-  - 20
-  - 20
-  - 20
-  - 12
-  - 12
-  - 12
+  - 25
+  - 25
+  - 25
+  - 9
+  - 8
+  - 8
 --- !u!114 &4290114964615529648
 MonoBehaviour:
   m_ObjectHideFlags: 0

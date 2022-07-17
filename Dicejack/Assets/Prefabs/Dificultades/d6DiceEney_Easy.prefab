@@ -101,9 +101,9 @@ MonoBehaviour:
   dice: 0
   d6Dice: 0
   percentatgesD6:
-  - 10
-  - 10
-  - 10
+  - 8
+  - 8
+  - 9
   - 25
   - 25
   - 25
