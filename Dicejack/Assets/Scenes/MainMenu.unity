@@ -676,6 +676,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6416985362079955528, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362079955528, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362079955528, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -689,7 +697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6416985362079955528, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -113
+      value: 427
       objectReference: {fileID: 0}
     - target: {fileID: 6416985362079955530, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -819,6 +827,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6416985362148673629, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362148673629, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362148673629, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362148673629, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6416985362148673631, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_Name
       value: Fade
@@ -828,6 +852,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6416985362226481036, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362226481036, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362226481036, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 295.72998
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985362226481036, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
@@ -841,7 +877,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6416985362226481036, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 337
+      value: -203
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985363284455820, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416985363284455820, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6416985363284455820, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_LocalScale.x
@@ -857,7 +901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6416985363284455820, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -448
+      value: 92
       objectReference: {fileID: 0}
     - target: {fileID: 6416985363284455821, guid: 4cff2f0e1290ae3479837c63e665da51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
